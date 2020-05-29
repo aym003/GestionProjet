@@ -32,7 +32,7 @@ export class GettypedComponent implements OnInit {
   
   onDelete(idTyped){
     if (confirm("Vous êtes sûr de vouloir supprimer cette Tache")) {
-     this.typedservice.DeleteProjet(idTyped).subscribe(
+     this.typedservice.DeleteTyped(idTyped).subscribe(
        res => {
          if(res == "Delete Done"){
            this.getTyped();
@@ -43,8 +43,13 @@ export class GettypedComponent implements OnInit {
          });
     }
  }
- AddorEdit(typedid){
-   this.dialog.open(AddedittypesComponent);
+ AddorEdit(typedid,typelabel){
+  this.typedservice.idpass=typedid;
+  this.typedservice.labelpass=typelabel;
+
+   this.dialog.open(AddedittypesComponent).afterClosed().subscribe(res => {
+    this.getTyped();
+  });
    
 
  }
