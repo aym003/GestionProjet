@@ -1,0 +1,323 @@
+<div class="main-wrapper main-wrapper-1">
+ 
+    <!-- Table -->
+    <div class="row">
+     <div class="col">
+       <div class="card shadow">
+         <div class="card-header border-0 text-center">
+           <h3 class="mb-0">Liste des Taches</h3>
+         
+             
+           
+         </div>
+         <div class="table-responsive ">
+           <button class="btn btn-sm btn-success text-white ml-4 float-right mr-5" (click)="AddProjet(template)"><i class="fa fa-plus"></i> Add Projet</button>
+           <table class="table align-items-center table-flush">
+             <thead class="thead-light">
+               <tr>
+                 <th scope="col">Nom Projet</th>
+                 <th scope="col">Description</th>
+                 <th scope="col">Action</th>
+                 
+               </tr>
+             </thead>
+             <tbody>
+               <tr *ngFor="let s of projetService.listProjet">
+                 <td>                    
+                   <div class="media align-items-center">
+                    
+                     <div class="media-body">
+                       <span class="mb-0 text-sm font-weight-bold">{{s.label}}</span>
+                     </div>
+                   </div>
+               </td>
+               <td>
+                 <div class="media align-items-center">
+                   
+                   <div class="media-body">
+                     <span class="mb-0 text-sm font-weight-bold">{{s.description}}</span>
+                   </div>
+                 </div>
+               </td>
+                 <td>
+                   <button  (click)="onModifier(s,edit)" class="btn btn-primary mr-3">
+                       <span class="far fa-edit"></span>
+                       </button>
+                       <button (click)="onDelete(s.idProjet)" class="btn btn-danger ">
+                       <span class="far fa-trash-alt"></span>
+                   </button>
+                 </td>
+                
+               </tr>
+             </tbody>
+           </table>
+         </div>
+      
+       </div>
+     </div>
+   </div>
+   
+   
+   
+   <!-- Add  tache  -->
+   
+   <ng-template #template class="custom-template">
+     <div class="modal-header">
+       <h4 class="modal-title pull-left">Post Projet</h4>
+       <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+         <span aria-hidden="true">&times;</span>
+       </button>
+     </div>
+     <div class="modal-body">
+       <form [formGroup]="projetService.form" (ngSubmit)="processForm()" #tacheForm="ngForm">
+          <input type="hidden"  formControlName="idProjet">
+    
+   
+       <div class="row">
+         <div class="form-group col-md-6">
+           <label for="label" class="col-form-label col-form-label-sm customLabel">
+             Nom Tache :
+           </label>
+           <input type="text"   placeholder="label" class='form-control'
+           formControlName="label" required minlength="2"/>
+         </div>
+         
+           <div class="form-group col-md-6">
+             <label for="description" class="col-form-label col-form-label-sm customLabel">
+               Description :
+             </label>
+             <input type="text"   placeholder="description" class='form-control'
+             formControlName="description" required minlength="2"/>
+           </div>
+         
+       </div>
+   
+     <div class="row">
+       <div class="form-group col-md-6">
+         <label for="dateDebutReelle" class="col-form-label col-form-label-sm customLabel">
+           Date Debut Réelle :
+         </label>
+         <input type="date"   placeholder="dateDebutReelle" class='form-control'
+         formControlName="dateDebutReelle" required minlength="2"/>
+       </div>
+       
+         <div class="form-group col-md-6">
+           <label for="dureeEstimee" class="col-form-label col-form-label-sm customLabel">
+             Durée Estimée :
+           </label>
+           <input type="number"  placeholder="dureeEstimee" class='form-control'
+           formControlName="dureeEstimee" required minlength="2"/>
+         </div>
+       
+   </div>
+   
+   <div class="row">
+     <div class="form-group col-md-6">
+       <label for="dateCreation" class="col-form-label col-form-label-sm customLabel">
+         Date Creation :
+       </label>
+       <input type="date"  placeholder="dateCreation" class='form-control'
+       formControlName="dateCreation" required minlength="2"/>
+     </div>
+     
+       <div class="form-group col-md-6">
+         <label for="attribute1" class="col-form-label col-form-label-sm customLabel">
+           Attribute1 :
+         </label>
+         <input type="text"   placeholder="attribute1" class='form-control'
+         formControlName="attribute1" required minlength="2"/>
+       </div>
+     
+   </div>
+   
+   <div class="row">
+     <div class="form-group col-md-6">
+       <label for="dateCloture" class="col-form-label col-form-label-sm customLabel">
+         Date Cloture :
+       </label>
+       <input type="number"  placeholder="dateCloture" class='form-control'
+       formControlName="dateCloture" required minlength="2"/>
+     </div>
+     
+       <div class="form-group col-md-6">
+         <label for="active" class="col-form-label col-form-label-sm customLabel">
+           Active :
+         </label>
+         <input type="text"   placeholder="active" class='form-control'
+         formControlName="active" required minlength="2"/>
+       </div>
+     
+   </div>
+   <div class="row">
+     <div class="form-group col-md-6">
+       <label for="dureeReelle" class="col-form-label col-form-label-sm customLabel">
+         dureeReelle :
+       </label>
+       <input type="text"  placeholder="dureeReelle" class='form-control'
+       formControlName="dureeReelle" required minlength="2"/>
+     </div>
+     
+       <div class="form-group col-md-6">
+         <label for="fkSousService" class="col-form-label col-form-label-sm customLabel">
+           fkSousService :
+         </label>
+         <input type="text"  placeholder="fkSousService" class='form-control'
+         formControlName="fkSousService" required minlength="2"/>
+       </div>
+     
+   </div>
+   <div class="row">
+     <div class="form-group col-md-6">
+       <!-- <label for="fKTaskType_S_Service" class="col-form-label col-form-label-sm customLabel">
+         fKTaskType_S_Service :
+       </label>
+       <input type="text"  placeholder="fKTaskType_S_Service" class='form-control'
+       formControlName="fKTaskType_S_Service" required minlength="2"/> -->
+     </div>
+     
+       <div class="form-group col-md-6">
+         <label for="label" class="col-form-label col-form-label-sm customLabel">
+         </label>
+         <button class='btn btn-info btn-sm form-control' style="margin-top: 30px;">Add</button>
+       </div>
+     
+   </div>
+   
+         </form>
+   
+     </div>
+   </ng-template>
+   
+   
+   
+   
+   <!-- edit tache  -->
+   
+   
+   
+   <ng-template #edit class="custom-template">
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Modifier Projet</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="projetService.form" (ngSubmit)="onupdate()" #tacheForm="ngForm">
+         <input type="hidden"  formControlName="idProjet">
+   
+  
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="label" class="col-form-label col-form-label-sm customLabel">
+            Nom Tache :
+          </label>
+          <input type="text"   placeholder="label" class='form-control'
+          formControlName="label" required minlength="2"/>
+        </div>
+        
+          <div class="form-group col-md-6">
+            <label for="description" class="col-form-label col-form-label-sm customLabel">
+              Description :
+            </label>
+            <input type="text"   placeholder="description" class='form-control'
+            formControlName="description" required minlength="2"/>
+          </div>
+        
+      </div>
+  
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="dateDebutReelle" class="col-form-label col-form-label-sm customLabel">
+          Date Debut Réelle :
+        </label>
+        <input type="date"   placeholder="dateDebutReelle" class='form-control'
+        formControlName="dateDebutReelle" required minlength="2"/>
+      </div>
+      
+        <div class="form-group col-md-6">
+          <label for="dureeEstimee" class="col-form-label col-form-label-sm customLabel">
+            Durée Estimée :
+          </label>
+          <input type="number"  placeholder="dureeEstimee" class='form-control'
+          formControlName="dureeEstimee" required minlength="2"/>
+        </div>
+      
+  </div>
+  
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label for="dateCreation" class="col-form-label col-form-label-sm customLabel">
+        Date Creation :
+      </label>
+      <input type="date"  placeholder="dateCreation" class='form-control'
+      formControlName="dateCreation" required minlength="2"/>
+    </div>
+    
+      <div class="form-group col-md-6">
+        <label for="attribute1" class="col-form-label col-form-label-sm customLabel">
+          Attribute1 :
+        </label>
+        <input type="text"   placeholder="attribute1" class='form-control'
+        formControlName="attribute1" required minlength="2"/>
+      </div>
+    
+  </div>
+  
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label for="dateCloture" class="col-form-label col-form-label-sm customLabel">
+        Date Cloture :
+      </label>
+      <input type="number"  placeholder="dateCloture" class='form-control'
+      formControlName="dateCloture" required minlength="2"/>
+    </div>
+    
+      <div class="form-group col-md-6">
+        <label for="active" class="col-form-label col-form-label-sm customLabel">
+          Active :
+        </label>
+        <input type="text"   placeholder="active" class='form-control'
+        formControlName="active" required minlength="2"/>
+      </div>
+    
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label for="dureeReelle" class="col-form-label col-form-label-sm customLabel">
+        dureeReelle :
+      </label>
+      <input type="text"  placeholder="dureeReelle" class='form-control'
+      formControlName="dureeReelle" required minlength="2"/>
+    </div>
+    
+      <div class="form-group col-md-6">
+        <label for="fkSousService" class="col-form-label col-form-label-sm customLabel">
+          fkSousService :
+        </label>
+        <input type="text"  placeholder="fkSousService" class='form-control'
+        formControlName="fkSousService" required minlength="2"/>
+      </div>
+    
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <!-- <label for="fKTaskType_S_Service" class="col-form-label col-form-label-sm customLabel">
+        fKTaskType_S_Service :
+      </label>
+      <input type="text"  placeholder="fKTaskType_S_Service" class='form-control'
+      formControlName="fKTaskType_S_Service" required minlength="2"/> -->
+    </div>
+    
+      <div class="form-group col-md-6">
+        <label for="label" class="col-form-label col-form-label-sm customLabel">
+        </label>
+        <button class='btn btn-info btn-sm form-control' style="margin-top: 30px;">Modifier</button>
+      </div>
+    
+  </div>
+  
+        </form>
+  
+    </div>
+  </ng-template>
