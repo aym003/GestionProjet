@@ -22,8 +22,8 @@ export class GettypedComponent implements OnInit {
   getTyped(){
     this.typedservice.getTyped().subscribe(data=>{
       this.typedservice.listTyped=data as Typed[];
-       console.log(data)
        
+     
       },error=>{
         console.log(error)
       }
@@ -46,7 +46,8 @@ export class GettypedComponent implements OnInit {
  AddorEdit(typedid,typelabel){
   this.typedservice.idpass=typedid;
   this.typedservice.labelpass=typelabel;
-
+  
+  
    this.dialog.open(AddedittypesComponent).afterClosed().subscribe(res => {
     this.getTyped();
   });
