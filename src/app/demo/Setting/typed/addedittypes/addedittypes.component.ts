@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TypedService } from 'src/app/core/MsDemandes/services/typed.service';
 import { Validators, FormBuilder } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-addedittypes',
@@ -13,7 +14,8 @@ export class AddedittypesComponent implements OnInit {
 
   constructor(public typedservice:TypedService,
     private fb : FormBuilder,
-    public dialogRef: MatDialogRef<AddedittypesComponent>,) { }
+    public dialogRef: MatDialogRef<AddedittypesComponent>,
+    private _snack:MatSnackBar) { }
 
   ngOnInit() {
     if (this.typedservice.idpass==null){
@@ -40,6 +42,11 @@ export class AddedittypesComponent implements OnInit {
     if (this.typedservice.idpass==null){
     this.typedservice.form.controls.Id .setValue("00000000-0000-0000-0000-000000000000") ;
     this.typedservice.postTyped().subscribe(data=>{
+      this._snack.open("Ajout réussi",'X',{
+        verticalPosition: 'top',
+        duration: 2000,
+        panelClass:'snack-succ'
+      });
         
     },error=>{
       console.log(error);
@@ -50,6 +57,11 @@ export class AddedittypesComponent implements OnInit {
   else {
   
     this.typedservice.putTyped().subscribe(data=>{
+      this._snack.open("Modification réussi",'X',{
+        verticalPosition: 'top',
+        duration: 2000,
+        panelClass:'snack-succ'
+      });
      
   },error=>{
     console.log(error);

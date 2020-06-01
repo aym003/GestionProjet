@@ -14,7 +14,8 @@ const routes: Routes = [
 { path:'tache',component:TacheComponent},
 { path:'objectif',component:ObjectifComponent},
 { path:'projet',component:ProjetComponent},
-{  path:'gettyped',component:GettypedComponent }
+{  path:'TypeD',component:GettypedComponent },
+
 ];
 
 @NgModule({

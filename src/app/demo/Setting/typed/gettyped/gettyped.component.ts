@@ -4,7 +4,7 @@ import { TypedService } from 'src/app/core/MsDemandes/services/typed.service';
 import { TableModule } from 'primeng/table';
 import { MatDialog } from '@angular/material/dialog';
 import { AddedittypesComponent } from '../addedittypes/addedittypes.component';
-
+import {MatSnackBar} from '@angular/material/snack-bar'; 
 @Component({
   selector: 'app-gettyped',
   templateUrl: './gettyped.component.html',
@@ -14,7 +14,10 @@ export class GettypedComponent implements OnInit {
   public typed = new Typed();
 
 
-  constructor(public typedservice:TypedService,private tablem:TableModule,private dialog:MatDialog) { }
+  constructor(public typedservice:TypedService,
+              private tablem:TableModule,
+              private dialog:MatDialog,
+              private _snack:MatSnackBar) { }
 
   ngOnInit() {
     this.getTyped()
@@ -30,18 +33,20 @@ export class GettypedComponent implements OnInit {
       )
   }
   
-  onDelete(idTyped){
+  onDelete(id){
     if (confirm("Vous êtes sûr de vouloir supprimer cette Tache")) {
-     this.typedservice.DeleteTyped(idTyped).subscribe(
-       res => {
-         if(res == "Delete Done"){
-           this.getTyped();
-         }
-       },
-       err => {
-         console.log(err);
-         });
+      this.typedservice.deleteTyped(id).subscribe(data=>{
+        this._snack.open("Suppression réussi",'X',{
+          verticalPosition: 'top',
+          duration: 2000,
+          panelClass:'snack-supp'
+        });
+        this.getTyped();
+      },error=>{
+        console.log(error);
+      });
     }
+    
  }
  AddorEdit(typedid,typelabel){
   this.typedservice.idpass=typedid;

@@ -51,5 +51,14 @@ export class TypedService {
           { responseType: "text" }
         );
     }
+    deleteTyped(id) { 
+      console.log(this.form.value);
+      return this.http
+        .delete(
+          environment.GestionTypedAPi + "/DeleteTypeD?id="+id,
+          { responseType: "text" },
+         
+        );
+    }
    
 }
