@@ -1,8 +1,8 @@
 
-<div class="row" style="height: 200px;opacity: 0.5; background-image: url('https://image.freepik.com/free-vector/abstract-blue-background_1048-1511.jpg');">
+<div class="row compup">
 
   <div class="col-sm"><h1 style="display: inline-block;color:white">Type de Demandes</h1></div>
-  <div class="col-sm" ><button style="float: right;margin-top: 20px;" (click)="AddorEdit(null)" class="btn btn-sm btn-success text-white " >
+  <div class="col-sm" ><button style="float: right;margin-top: 20px;" (click)="AddorEdit(null,null)" class="btn btn-sm btn-success text-white " >
       <i class="fa fa-plus"></i> Ajouter Type</button></div>
 
       <div class="container h-100">
@@ -21,13 +21,13 @@
    <p style="padding-left: 10px;">Nombre Total de types</p>
    <h3 style="color: darkblue;padding-left: 10px;">1</h3>
   </div> -->
-<p-table [value]="typedservice.listTyped" [paginator]="true" [rows]="5" #dt filterBy="label" >
+<p-table [value]="typedservice.listTyped" [paginator]="true" [rows]="5" #dt filterBy="label" emptyMessage="Aucun type de demande trouvé">
     
     <ng-template pTemplate="header" style="background-color: #868e96;">
       
        <tr>
-         <th>ID </th>
-          <th><div class="row" style="padding: 0.571em 0.857em;">Label </div>
+        
+          <th><div class="row" style="padding: 0.571em 0.857em;">Type de Demandes </div>
             <!-- <input pInputText type="text" (input)="dt.filter($event.target.value, 'label','contains' )"> -->
            
             </th>
@@ -36,11 +36,12 @@
             </tr>
       </ng-template>
  <ng-template pTemplate="body" let-typed>
+   
       <tr>
-        <td>{{typed.id}}</td>
+        
        <td>{{typed.label}}</td> 
        <td  style="text-align: center">
-        <button  (click)="AddorEdit(typed.id)" class="btn btn mr-3" >
+        <button  (click)="AddorEdit(typed.id,typed.label)" class="btn btn mr-3" >
            <span style="color: #C17C05;"><i class="far fa-edit " style="font-size:28px;"></i></span> 
             </button>
       <button (click)="onDelete(typed.id)" class="btn btn mr-3 ">
@@ -50,6 +51,13 @@
 </td>
      </tr>
      </ng-template>
+     <ng-template pTemplate="emptymessage" let-columns>
+      <tr>
+          <td [attr.colspan]="columns.length">
+              Aucun type trouvé
+          </td>
+      </tr>
+  </ng-template>
   </p-table>
     
   <!-- <table class="table align-items-center table-flush">
