@@ -13,9 +13,11 @@ import {TableModule} from 'primeng/table';
 import { AddedittypesComponent } from './Setting/typed/addedittypes/addedittypes.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
 @NgModule({
   declarations: [FirstViewComponent, ObjectifComponent, ProjetComponent, GettypedComponent, AddedittypesComponent],
   imports: [
+    MatSnackBarModule,
     TableModule,
     CommonModule,
     SharedModule,
