@@ -12,6 +12,7 @@ export class TypeoService {
   labelpass;
 
   listTypeo: Typeo[];
+
   form = new FormGroup({
     idTypeObjectif : new FormControl(""),
     label: new FormControl('', Validators.required)
@@ -28,7 +29,13 @@ export class TypeoService {
       .delete(environment.GestionTypeoApi+ "/RemoveTyped?id=" + idTypeo,
         { responseType: "json" });
     }
+ initializeFormForEdit(typeo:Typeo){
+  this.form.setValue({
+    idTypeObjectif:typeo.idTypeObjectif,
+    label:typeo.label
+  });
 
+}
     initializeFormForPost() {
       this.form.setValue({
         idTypeObjectif: '00000000-0000-0000-0000-000000000000',

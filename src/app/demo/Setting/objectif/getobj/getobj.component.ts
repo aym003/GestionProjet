@@ -63,5 +63,20 @@ export class GetobjComponent implements OnInit {
    
 
  }
+ openComponentForPost() {
+  this.typeoservice.initializeFormForPost();
+  this.dialog.open(AddditobjComponent).afterClosed().subscribe(res => {
+    this.gettypeo();
 
+ });
+
+}
+openComponentForUpdate(typeo: Typeo) {
+  this.typeoservice.initializeFormForEdit(typeo);
+  this.dialog.open(AddditobjComponent).afterClosed().subscribe(res => {
+    this.gettypeo();
+
+ });
+
+ }
 }

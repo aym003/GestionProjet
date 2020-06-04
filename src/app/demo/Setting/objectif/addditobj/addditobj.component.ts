@@ -19,29 +19,19 @@ export class AddditobjComponent implements OnInit {
     private _snack:MatSnackBar) { }
 
   ngOnInit() {
-    if (this.TypeoService.idpass==null){
-   
-    
-        this.TypeoService.form = this.fb.group({
-          Id :  [null],
-          Label:  [null, Validators.required]
-    })
-    }
-    else{
-      // this.TypeoService.initializeFormForPost();
-      this.TypeoService.form = this.fb.group({
-        idTypeObjectif :  [null],
-        Label:  [null, Validators.required]
-  })
-  
-      this.TypeoService.form.controls.idTypeObjectif.setValue(this.TypeoService.idpass);
-      this.TypeoService.form.controls.Label.setValue(this.TypeoService.labelpass)
-     
-    }
+    this.TypeoService.form.markAsUntouched();
   }
   onSubmit(){
-    if (this.TypeoService.idpass==null){
-    this.TypeoService.form.controls.idTypeObjectif .setValue("00000000-0000-0000-0000-000000000000") ;
+    if (
+      this.TypeoService.form.controls.idTypeObjectif.value ==
+      "00000000-0000-0000-0000-000000000000"
+    ) {
+      this.PostTypeo();
+    } else {
+      this.UpdateTypeo();
+    }
+  }
+  PostTypeo(){
     this.TypeoService.postTypeo().subscribe(data=>{
       this._snack.open("Ajout réussi",'X',{
         verticalPosition: 'top',
@@ -50,26 +40,36 @@ export class AddditobjComponent implements OnInit {
       });
         
     },error=>{
-      console.log(error);
+      console.log(error)
+      this._snack.open("Erreur", "X", {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: "right",
+        panelClass: 'snack-supp'
     });
-    this.dialogRef.close();
-    this.TypeoService.idpass=null;
+    
+  })
   }
-  else {
-  
+
+  UpdateTypeo(){
     this.TypeoService.putTypeo().subscribe(data=>{
-      this._snack.open("Modification réussi",'X',{
+      this._snack.open("Ajout réussi",'X',{
         verticalPosition: 'top',
         duration: 2000,
         panelClass:'snack-succ'
       });
-     
-  },error=>{
-    console.log(error);
-  });
-  this.dialogRef.close();
+        
+    },error=>{
+      console.log(error)
+      this._snack.open("Erreur", "X", {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: "right",
+        panelClass: 'snack-supp'
+    });
+    
+  })
   }
-  this.TypeoService.idpass=null;
-  }
+
 
 }
