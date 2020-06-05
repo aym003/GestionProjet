@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { DemoModule } from './demo/demo.module';
-import { TacheComponent } from './demo/Setting/tache/tache.component';
 //import { TachepostComponent } from './demo/Setting/taches/tachepost/tachepost.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -27,7 +26,6 @@ import { CalendarComponent } from './shared/calendar/calendar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TacheComponent,
     //TachepostComponent,
     
   ],

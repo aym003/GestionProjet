@@ -8,6 +8,12 @@ export const environment = {
   GestionObjectifApi:"https://localhost:44382/api/Objectif",
   GestionProjetApi:"https://localhost:44382/api/Projet",
   GestionTypedAPi:"http://localhost:11601/api/TypeDemande",
+  GestionProjetServiceApi : 'http://localhost:12455/api' ,
+  GestionProjetSserviceApi : 'http://localhost:12455/api' ,
+  GestionProjetRoleApi : 'http://localhost:12455/api' ,
+  GestionProjetRoleSSApi : 'http://localhost:12455/api' ,
+
+
 };
 
 /*
