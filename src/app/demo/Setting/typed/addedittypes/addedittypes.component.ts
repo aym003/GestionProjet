@@ -22,25 +22,25 @@ export class AddedittypesComponent implements OnInit {
    
     
         this.typedservice.form = this.fb.group({
-          Id :  [null],
+          IdTypeDemande :  [null],
           Label:  [null, Validators.required]
     })
     }
     else{
       // this.typedservice.initializeFormForPost();
       this.typedservice.form = this.fb.group({
-        Id :  [null],
+        IdTypeDemande :  [null],
         Label:  [null, Validators.required]
   })
   
-      this.typedservice.form.controls.Id.setValue(this.typedservice.idpass);
+      this.typedservice.form.controls.IdTypeDemande.setValue(this.typedservice.idpass);
       this.typedservice.form.controls.Label.setValue(this.typedservice.labelpass)
      
     }
   }
   onSubmit(){
     if (this.typedservice.idpass==null){
-    this.typedservice.form.controls.Id .setValue("00000000-0000-0000-0000-000000000000") ;
+    this.typedservice.form.controls.IdTypeDemande .setValue("00000000-0000-0000-0000-000000000000") ;
     this.typedservice.postTyped().subscribe(data=>{
       this._snack.open("Ajout réussi",'X',{
         verticalPosition: 'top',

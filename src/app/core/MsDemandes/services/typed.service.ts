@@ -12,7 +12,7 @@ export class TypedService {
 
   listTyped: Typed[];
   form = new FormGroup({
-    id : new FormControl(""),
+    idTypeDemande : new FormControl(""),
     label: new FormControl('', Validators.required)
     });
 
@@ -20,24 +20,24 @@ export class TypedService {
 
   getTyped(){
         
-    return this.http.get(environment.GestionTypedAPi + '/') ;
+    return this.http.get(environment.GestionTypedAPi + '/GetTypeDemande') ;
   }
-  DeleteTyped(idTyped){
+  DeleteTyped(idTypeDemande){
     return this.http
-      .delete(environment.GestionTypedAPi+ "/RemoveTyped?id=" + idTyped,
+      .delete(environment.GestionTypedAPi+ "/DeleteTypeDemande?id=" + idTypeDemande,
         { responseType: "json" });
     }
 
     initializeFormForPost() {
       this.form.setValue({
-        id: '00000000-0000-0000-0000-000000000000',
+        idTypeDemande: '00000000-0000-0000-0000-000000000000',
         label: '',
       });
     }
     postTyped() {
       return this.http
         .post(
-          environment.GestionTypedAPi+ "/PostTypeD",
+          environment.GestionTypedAPi+ "/PostTypeDemande",
           this.form.value,
           { responseType: "text" }
         );
@@ -46,16 +46,16 @@ export class TypedService {
       console.log(this.form.value);
       return this.http
         .put(
-          environment.GestionTypedAPi + "/PutTypeD",
+          environment.GestionTypedAPi + "/PutTypeDemande",
           this.form.value,
           { responseType: "text" }
         );
     }
-    deleteTyped(id) { 
+    deleteTyped(idTypeDemande) { 
       console.log(this.form.value);
       return this.http
         .delete(
-          environment.GestionTypedAPi + "/DeleteTypeD?id="+id,
+          environment.GestionTypedAPi + "/DeleteTypeDemande?id="+idTypeDemande,
           { responseType: "text" },
          
         );

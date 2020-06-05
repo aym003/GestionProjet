@@ -1,5 +1,5 @@
 export class Typed {
-    id : string ;
+    idTypeDemande : string ;
     label : string ;
 }
 

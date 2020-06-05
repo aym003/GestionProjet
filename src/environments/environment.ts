@@ -7,9 +7,15 @@ export const environment = {
   GestionTacheApi :"https://localhost:44382/api/Tache",
   GestionTypeoApi:"https://localhost:44382/api/TypeObjectif",
   GestionProjetApi:"https://localhost:44382/api/Projet",
+
   GestionTypedAPi:"http://localhost:11601/api/TypeDemande",
   GestionTypeossAPi:"https://localhost:44382/api/TypeObjectif_S_Service",
   GestionObjectifApi:""
+
+  //GestionTypedAPi:"https://localhost:44373/api/TypeDemande",
+  GestionTypeTacheSousServiceAPi:"https://localhost:44382/api/TaskType_S_Service",
+  GestionTypeTacheAPi:"https://localhost:44382/api/TaskType",
+
 };
 
 

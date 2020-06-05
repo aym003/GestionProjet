@@ -14,14 +14,25 @@ import { AddedittypesComponent } from './Setting/typed/addedittypes/addedittypes
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 import { GetobjComponent } from './Setting/objectif/getobj/getobj.component';
 import { AddditobjComponent } from './Setting/objectif/addditobj/addditobj.component';
 import { PostaffComponent } from './Affectation/postaff/postaff.component'; 
 import {DropdownModule} from 'primeng/dropdown';
 import {PickListModule} from 'primeng/picklist';
 import { ConsultationcompoComponent } from './Affectation/consultationcompo/consultationcompo.component';
+
+import { AddeditTypeTacheComponent } from './Setting/typeTache/addedit-type-tache/addedit-type-tache.component';
+import { GetTypeTacheComponent } from './Setting/typeTache/get-type-tache/get-type-tache.component';
+import { GetgroupeComponent } from './Setting/groupe/getgroupe/getgroupe.component';
+import { AddeditgroupeComponent } from './Setting/groupe/addeditgroupe/addeditgroupe.component';
+import { AddeditTypetacheSousserviceComponent } from './Setting/typetachesousservice/addedit-typetache-sousservice/addedit-typetache-sousservice.component';
+import { GetTypetacheSousserviceComponent } from './Setting/typetachesousservice/get-typetache-sousservice/get-typetache-sousservice.component';
+
+
 @NgModule({
-  declarations: [FirstViewComponent, ProjetComponent, GettypedComponent, AddedittypesComponent, GetobjComponent, AddditobjComponent, PostaffComponent, ConsultationcompoComponent],
+   declarations: [FirstViewComponent, AddedittypesComponent, GetobjComponent, AddditobjComponent, PostaffComponent, ConsultationcompoComponent,ObjectifComponent, ProjetComponent, GettypedComponent, AddedittypesComponent, AddeditTypeTacheComponent, GetTypeTacheComponent, GetgroupeComponent, AddeditgroupeComponent, AddeditTypetacheSousserviceComponent, GetTypetacheSousserviceComponent],
+
   imports: [
     PickListModule,
     DropdownModule,
