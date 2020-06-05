@@ -6,7 +6,7 @@ import { FirstViewComponent } from './first-view/first-view.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterLinkActive, RouterLink, RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { ObjectifComponent } from './Setting/objectif/objectif/objectif.component';
+
 import { ProjetComponent } from './Setting/projet/projet/projet.component';
 import { GettypedComponent } from './Setting/typed/gettyped/gettyped.component';
 import {TableModule} from 'primeng/table';
@@ -14,6 +14,14 @@ import { AddedittypesComponent } from './Setting/typed/addedittypes/addedittypes
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+import { GetobjComponent } from './Setting/objectif/getobj/getobj.component';
+import { AddditobjComponent } from './Setting/objectif/addditobj/addditobj.component';
+import { PostaffComponent } from './Affectation/postaff/postaff.component'; 
+import {DropdownModule} from 'primeng/dropdown';
+import {PickListModule} from 'primeng/picklist';
+import { ConsultationcompoComponent } from './Affectation/consultationcompo/consultationcompo.component';
+
 import { AddeditTypeTacheComponent } from './Setting/typeTache/addedit-type-tache/addedit-type-tache.component';
 import { GetTypeTacheComponent } from './Setting/typeTache/get-type-tache/get-type-tache.component';
 import { GetgroupeComponent } from './Setting/groupe/getgroupe/getgroupe.component';
@@ -22,10 +30,12 @@ import { AddeditTypetacheSousserviceComponent } from './Setting/typetachesousser
 import { GetTypetacheSousserviceComponent } from './Setting/typetachesousservice/get-typetache-sousservice/get-typetache-sousservice.component';
 
 
-
 @NgModule({
-  declarations: [FirstViewComponent, ObjectifComponent, ProjetComponent, GettypedComponent, AddedittypesComponent, AddeditTypeTacheComponent, GetTypeTacheComponent, GetgroupeComponent, AddeditgroupeComponent, AddeditTypetacheSousserviceComponent, GetTypetacheSousserviceComponent],
+   declarations: [FirstViewComponent, AddedittypesComponent, GetobjComponent, AddditobjComponent, PostaffComponent, ConsultationcompoComponent,ObjectifComponent, ProjetComponent, GettypedComponent, AddedittypesComponent, AddeditTypeTacheComponent, GetTypeTacheComponent, GetgroupeComponent, AddeditgroupeComponent, AddeditTypetacheSousserviceComponent, GetTypetacheSousserviceComponent],
+
   imports: [
+    PickListModule,
+    DropdownModule,
     MatSnackBarModule,
     TableModule,
     CommonModule,

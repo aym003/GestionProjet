@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Objectif } from './objectif.model';
-import { FormGroup, FormControl } from '@angular/forms';
+import { Objectif } from '../model/objectif.model';
+import { FormGroup, FormControl ,Validators} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
@@ -10,7 +10,8 @@ import { environment } from 'src/environments/environment';
 export class ObjectifService {
   listObjectif : Objectif[];
   objectif:Objectif;
-  
+  idpass;
+  labelpass;
   form = new FormGroup({
     idObjectifs : new FormControl(""),
     dateDebutReelle : new FormControl(""),
@@ -60,7 +61,7 @@ export class ObjectifService {
 
   getObjectif(){
         
-    return this.http.get(environment.GestionObjectifApi + '/GetObjectif') ;
+    return this.http.get(environment.GestionObjectifApi +'/GetTypeObjectif') ;
   } 
   
 
