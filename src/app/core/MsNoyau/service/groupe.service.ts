@@ -22,7 +22,7 @@ export class GroupeService {
 
   getGroupe(){
         
-    return this.http.get(environment.GestionGroupeAPi + "/GetGroupe") ;
+    return this.http.get(environment.GestionGroupeAPi + "/Groupe/GetGroupe") ;
   }
 
 
@@ -30,7 +30,7 @@ export class GroupeService {
     console.log(this.form.value);
     return this.http
       .delete(
-        environment.GestionGroupeAPi + "/RemoveGroupe?id=" +idGroupe,
+        environment.GestionGroupeAPi + "/Groupe/RemoveGroupe?id=" +idGroupe,
         { responseType: "text" },
        
       );
@@ -47,7 +47,7 @@ export class GroupeService {
   postGroupe() {
     return this.http
       .post(
-        environment.GestionGroupeAPi+ "/PostGroupe",
+        environment.GestionGroupeAPi+ "/Groupe/PostGroupe",
         this.form.value,
         { responseType: "text" }
       );
@@ -57,7 +57,7 @@ export class GroupeService {
     console.log(this.form.value);
     return this.http
       .put(
-        environment.GestionGroupeAPi + "/PutGroupe",
+        environment.GestionGroupeAPi + "/Groupe/PutGroupe",
         this.form.value,
         { responseType: "text" }
       );

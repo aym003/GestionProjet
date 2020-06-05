@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TypossService } from 'src/app/core/TypeObjSousService/service/typoss.service';
 import { FormBuilder, Validators } from '@angular/forms';
-import { UUID } from 'angular2-uuid';
+//import { UUID } from 'angular2-uuid';
 
 import {DropdownModule} from 'primeng/dropdown';
 import {SelectItem} from 'primeng/api';

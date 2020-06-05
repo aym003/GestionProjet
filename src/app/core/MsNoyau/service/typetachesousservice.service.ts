@@ -25,14 +25,14 @@ export class TypetachesousserviceService {
 
   getTypeTacheSousService(){
         
-    return this.http.get(environment.GestionTypeTacheSousServiceAPi + "/GetTaskT_S_S") ;
+    return this.http.get(environment.GestionTypeTacheSousServiceAPi + "/TaskType_S_Service/GetTaskT_S_S") ;
   }
   
   deleteTypeTacheSousService(idTaskType_S_Service) { 
     console.log(this.form.value);
     return this.http
       .delete(
-        environment.GestionTypeTacheSousServiceAPi + "/RemoveTaskT_S_S?id=" +idTaskType_S_Service,
+        environment.GestionTypeTacheSousServiceAPi + "/TaskType_S_Service/RemoveTaskT_S_S?id=" +idTaskType_S_Service,
         { responseType: "text" },
         
       );
@@ -52,7 +52,7 @@ export class TypetachesousserviceService {
     postTypeTacheSousService() {
       return this.http
         .post(
-          environment.GestionTypeTacheSousServiceAPi+ "/PostTaskT_S_S",
+          environment.GestionTypeTacheSousServiceAPi+ "/TaskType_S_Service/PostTaskT_S_S",
           this.form.value,
           { responseType: "text" }
         );
@@ -62,7 +62,7 @@ export class TypetachesousserviceService {
       console.log(this.form.value);
       return this.http
         .put(
-          environment.GestionTypeTacheSousServiceAPi + "/PutTaskT_S_S",
+          environment.GestionTypeTacheSousServiceAPi + "/TaskType_S_Service/PutTaskT_S_S",
           this.form.value,
           { responseType: "text" }
         );
@@ -70,7 +70,7 @@ export class TypetachesousserviceService {
 
     getTypeTache(){
         
-      return this.http.get(environment.GestionTypeTacheAPi + "/GetTaskType") ;
+      return this.http.get(environment.GestionTypeTacheAPi + "/TaskType/GetTaskType") ;
     }
    
 }

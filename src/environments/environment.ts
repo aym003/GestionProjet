@@ -8,13 +8,13 @@ export const environment = {
   GestionTypeoApi:"https://localhost:44382/api/TypeObjectif",
   GestionProjetApi:"https://localhost:44382/api/Projet",
 
-  GestionTypedAPi:"http://localhost:11601/api/TypeDemande",
+  GestionTypedAPi:"http://localhost:11601/api",
   GestionTypeossAPi:"https://localhost:44382/api/TypeObjectif_S_Service",
-  GestionObjectifApi:""
-
+  GestionObjectifApi:"",
+  GestionGroupeAPi:"https://localhost:44382/api",
   //GestionTypedAPi:"https://localhost:44373/api/TypeDemande",
-  GestionTypeTacheSousServiceAPi:"https://localhost:44382/api/TaskType_S_Service",
-  GestionTypeTacheAPi:"https://localhost:44382/api/TaskType",
+  GestionTypeTacheSousServiceAPi:"https://localhost:44382/api",
+  GestionTypeTacheAPi:"https://localhost:44382/api"
 
 };
 

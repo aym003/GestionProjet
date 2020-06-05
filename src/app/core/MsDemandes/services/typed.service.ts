@@ -20,11 +20,11 @@ export class TypedService {
 
   getTyped(){
         
-    return this.http.get(environment.GestionTypedAPi + '/GetTypeDemande') ;
+    return this.http.get(environment.GestionTypedAPi + '/TypeDemande/GetTypeDemande') ;
   }
   DeleteTyped(idTypeDemande){
     return this.http
-      .delete(environment.GestionTypedAPi+ "/DeleteTypeDemande?id=" + idTypeDemande,
+      .delete(environment.GestionTypedAPi+ "/TypeDemande/DeleteTypeDemande?id=" + idTypeDemande,
         { responseType: "json" });
     }
 
@@ -37,7 +37,7 @@ export class TypedService {
     postTyped() {
       return this.http
         .post(
-          environment.GestionTypedAPi+ "/PostTypeDemande",
+          environment.GestionTypedAPi+ "/TypeDemande/PostTypeDemande",
           this.form.value,
           { responseType: "text" }
         );
@@ -46,7 +46,7 @@ export class TypedService {
       console.log(this.form.value);
       return this.http
         .put(
-          environment.GestionTypedAPi + "/PutTypeDemande",
+          environment.GestionTypedAPi + "/TypeDemande/PutTypeDemande",
           this.form.value,
           { responseType: "text" }
         );
@@ -55,7 +55,7 @@ export class TypedService {
       console.log(this.form.value);
       return this.http
         .delete(
-          environment.GestionTypedAPi + "/DeleteTypeDemande?id="+idTypeDemande,
+          environment.GestionTypedAPi + "/TypeDemande/DeleteTypeDemande?id="+idTypeDemande,
           { responseType: "text" },
          
         );

@@ -31,7 +31,7 @@ import { GetTypetacheSousserviceComponent } from './Setting/typetachesousservice
 
 
 @NgModule({
-   declarations: [FirstViewComponent, AddedittypesComponent, GetobjComponent, AddditobjComponent, PostaffComponent, ConsultationcompoComponent,ObjectifComponent, ProjetComponent, GettypedComponent, AddedittypesComponent, AddeditTypeTacheComponent, GetTypeTacheComponent, GetgroupeComponent, AddeditgroupeComponent, AddeditTypetacheSousserviceComponent, GetTypetacheSousserviceComponent],
+   declarations: [FirstViewComponent, AddedittypesComponent, GetobjComponent, AddditobjComponent, PostaffComponent, ConsultationcompoComponent, ProjetComponent, GettypedComponent, AddedittypesComponent, AddeditTypeTacheComponent, GetTypeTacheComponent, GetgroupeComponent, AddeditgroupeComponent, AddeditTypetacheSousserviceComponent, GetTypetacheSousserviceComponent],
 
   imports: [
     PickListModule,
