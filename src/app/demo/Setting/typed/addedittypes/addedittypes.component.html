@@ -1,6 +1,6 @@
 
 <form [formGroup]="typedservice.form" (submit)="onSubmit()" novalidate>
-    <input type="hidden" formControlName="Id">
+    <input type="hidden" formControlName="IdTypeDemande">
       <div class="col-auto">
           <div class="text-center">
         <label class="text-center font-weight-bold" >Nom du Type </label>
@@ -23,7 +23,7 @@
   
   <div class="card-footer py-4">
       <div class="text-center">
-          <button [disabled]='typedservice.form.invalid' class="btn btn-success" type="submit">Ajouter</button>
+          <button [disabled]='typedservice.form.invalid' class="btn btn-success" type="submit">Sauvegarder</button>
       </div>
   </div>
 </form>

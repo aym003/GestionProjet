@@ -7,10 +7,12 @@ import { FormControl, FormGroup,Validators } from '@angular/forms';
   providedIn: 'root'
 })
 export class TypedService {
+  idpass;
+  labelpass;
 
   listTyped: Typed[];
   form = new FormGroup({
-    id : new FormControl(""),
+    idTypeDemande : new FormControl(""),
     label: new FormControl('', Validators.required)
     });
 
@@ -18,18 +20,45 @@ export class TypedService {
 
   getTyped(){
         
-    return this.http.get(environment.GestionTypedAPi + '/') ;
+    return this.http.get(environment.GestionTypedAPi + '/GetTypeDemande') ;
   }
-  DeleteProjet(idTyped){
+  DeleteTyped(idTypeDemande){
     return this.http
-      .delete(environment.GestionProjetApi + "/RemoveTyped?id=" + idTyped,
+      .delete(environment.GestionTypedAPi+ "/DeleteTypeDemande?id=" + idTypeDemande,
         { responseType: "json" });
     }
+
     initializeFormForPost() {
       this.form.setValue({
-        id: '00000000-0000-0000-0000-000000000000',
+        idTypeDemande: '00000000-0000-0000-0000-000000000000',
         label: '',
       });
+    }
+    postTyped() {
+      return this.http
+        .post(
+          environment.GestionTypedAPi+ "/PostTypeDemande",
+          this.form.value,
+          { responseType: "text" }
+        );
+    }
+    putTyped() { 
+      console.log(this.form.value);
+      return this.http
+        .put(
+          environment.GestionTypedAPi + "/PutTypeDemande",
+          this.form.value,
+          { responseType: "text" }
+        );
+    }
+    deleteTyped(idTypeDemande) { 
+      console.log(this.form.value);
+      return this.http
+        .delete(
+          environment.GestionTypedAPi + "/DeleteTypeDemande?id="+idTypeDemande,
+          { responseType: "text" },
+         
+        );
     }
    
 }

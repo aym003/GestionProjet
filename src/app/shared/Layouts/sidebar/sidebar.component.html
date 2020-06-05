@@ -1,23 +1,33 @@
-!-- sidebar -->
-<div class="main-sidebar sidebar-style-2" style="  background-image: linear-gradient(to right bottom, #005781, #126894, #2079a8, #2c8cbb, #389ecf);
-">
+
+
+<!-- sidebar -->
+<div class="main-sidebar sidebar-style-2">
+
+
+
     <aside id="sidebar-wrapper">  
       <div class="sidebar-brand">
         <a href="index.html" >Gestion Projet</a>
       </div>
-      <!-- <div class="sidebar-brand sidebar-brand-sm">
-        <a href="index.html">St</a>
-      </div> -->
+      <div class="sidebar-brand sidebar-brand-sm">
+        <a href="index.html">GP</a>
+      </div>
       <ul class="sidebar-menu">
+
+        <!-- <li class="menu-header">Affectation</li> -->
+
 
         <!-- <li class="menu-header">Dashboard</li>
         <li class="dropdown">
-          <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+          <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fa fa-exchange-alt"></i><span>Affectation</span></a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link" href="index-0.html">General Dashboard</a></li>
-            <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
+            <li><a class="nav-link beep beep-sidebar ripple" href="/postaff" routerLink="/typoss" routerLinkActive="active">Objectif SousService</a></li>
+            
+
+            
           </ul> 
-        </li> -->
+        </li>
+        
         <!-- <li class="menu-header">Starter</li>
         <li class="dropdown">
           <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Layout</span></a>
@@ -55,8 +65,20 @@
         </li> -->
         <hr style="widows: 50%;text-align:center;background-color:#e63900;"> 
         <li class="dropdown">
-          <a class="nav-link has-dropdown "><i class="fas fa-th-large"></i> <span>Parametrages</span></a>
+
+          
+          <a class="nav-link has-dropdown " href="#" data-toggle="dropdown"><i class="fa fa-sliders-h"></i> <span>Parametrages</span></a>
+
           <ul class="dropdown-menu">
+
+
+              
+              <li><a class="nav-link beep beep-sidebar ripple" href="/postaff" routerLink="/typoss" routerLinkActive="active">Tache</a></li>   
+              <li><a class="nav-link beep beep-sidebar ripple" href="/getobj" routerLink="/Tyopeobjectif" routerLinkActive="active">Objectif</a></li>   
+              <li><a class="nav-link beep beep-sidebar ripple" href="/projet" routerLink="/projet" routerLinkActive="active">Projet</a></li>  
+              <li><a class="nav-link beep beep-sidebar ripple" href="/gettyped" routerLink="/TypeD" routerLinkActive="active">Type Demande</a></li>          
+                
+
             <!-- <h6 class="navbar-heading text-muted">Tache</h6>
             <ul class="navbar-nav">
             <li *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
@@ -67,6 +89,18 @@
           </li> 
         </ul>               -->
 
+              
+<!--           
+      
+              <li><a class="nav-link beep beep-sidebar ripple" href="/tache" routerLink="/tache" routerLinkActive="active">Tache</a></li>   
+              <li><a class="nav-link beep beep-sidebar ripple" href="/objectif" routerLink="/objectif" routerLinkActive="active">Objectif</a></li>   
+              <li><a class="nav-link beep beep-sidebar ripple" href="/projet" routerLink="/projet" routerLinkActive="active">Projet</a></li>   -->
+              <li><a class="nav-link beep beep-sidebar ripple"  style="background-color:#fff;" href="/gettyped" routerLink="/TypeD" routerLinkActive="active">Type Demande</a></li> 
+              <li><a class="nav-link beep beep-sidebar ripple"  style="background-color:#fff;" href="/TypeTacheSousService" routerLink="/TypeTacheSousService" routerLinkActive="active">TyTache S_Service</a></li>
+              <li><a class="nav-link beep beep-sidebar ripple" style="background-color:#fff;" href="/gettypetache" routerLink="/gettypetache" routerLinkActive="active">Type Tache</a></li>          
+              <li><a class="nav-link beep beep-sidebar ripple" style="background-color:#fff;" href="/groupe" routerLink="/groupe" routerLinkActive="active">Groupe</a></li>          
+
+
               <li><a class="nav-link beep beep-sidebar" href="/tache" routerLink="/tache" routerLinkActive="active">Tache</a></li>   
               <li><a class="nav-link beep beep-sidebar" href="/objectif" routerLink="/objectif" routerLinkActive="active">Objectif</a></li>   
               <li><a class="nav-link beep beep-sidebar" href="/projet" routerLink="/projet" routerLinkActive="active">Projet</a></li>  
@@ -76,11 +110,13 @@
               <li><a class="nav-link beep beep-sidebar "  routerLink="/getRole" routerLinkActive="active">Role</a></li>          
               <li><a class="nav-link beep beep-sidebar "  routerLink="/getRoleSS" routerLinkActive="active">RoleSS</a></li>          
 
+
                  <!-- <li><a class="nav-link" href="components-chat-box.html">Chat Box</a></li>                <li><a class="nav-link beep beep-sidebar" href="components-empty-state.html">Empty State</a></li>                <li><a class="nav-link" href="components-gallery.html">Gallery</a></li>
             <li><a class="nav-link beep beep-sidebar" href="components-hero.html">Hero</a></li>                <li><a class="nav-link" href="components-multiple-upload.html">Multiple Upload</a></li>
             <li><a class="nav-link beep beep-sidebar" href="components-pricing.html">Pricing</a></li>                <li><a class="nav-link" href="components-statistic.html">Statistic</a></li>                <li><a class="nav-link" href="components-tab.html">Tab</a></li>
             <li><a class="nav-link" href="components-table.html">Table</a></li>
             <li><a class="nav-link" href="components-user.html">User</a></li>                <li><a class="nav-link beep beep-sidebar" href="components-wizard.html">Wizard</a></li>              -->
+
            </ul>
           
         </li> 
@@ -163,11 +199,13 @@
         </li>            -->
          <!-- <li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>Credits</span></a></li> -->
       </ul>
+
       <div class="ps__rail-y" style="color:#19B3D3; height: 705px; "></div>
       <!-- <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
         <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
           <i class="fas fa-rocket"></i> Documentation
         </a>
       </div>        -->
+
      </aside>
   </div>

@@ -19,6 +19,7 @@ import { AddedittypesComponent } from './demo/Setting/typed/addedittypes/addedit
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { CalendarComponent } from './shared/calendar/calendar.component';
+import { AddditobjComponent } from './demo/Setting/objectif/addditobj/addditobj.component';
 
 //import { PaginationModule } from 'ngx-bootstrap/pagination';
 
@@ -47,7 +48,7 @@ import { CalendarComponent } from './shared/calendar/calendar.component';
     //PaginationModule.forRoot(),
     
   ],
-  entryComponents:[AddedittypesComponent,CalendarComponent],
+  entryComponents:[AddedittypesComponent,CalendarComponent,AddditobjComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
