@@ -13,9 +13,18 @@ import {TableModule} from 'primeng/table';
 import { AddedittypesComponent } from './Setting/typed/addedittypes/addedittypes.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AddeditTypeTacheComponent } from './Setting/typeTache/addedit-type-tache/addedit-type-tache.component';
+import { GetTypeTacheComponent } from './Setting/typeTache/get-type-tache/get-type-tache.component';
+import { GetgroupeComponent } from './Setting/groupe/getgroupe/getgroupe.component';
+import { AddeditgroupeComponent } from './Setting/groupe/addeditgroupe/addeditgroupe.component';
+import { AddeditTypetacheSousserviceComponent } from './Setting/typetachesousservice/addedit-typetache-sousservice/addedit-typetache-sousservice.component';
+import { GetTypetacheSousserviceComponent } from './Setting/typetachesousservice/get-typetache-sousservice/get-typetache-sousservice.component';
+
+
+
 @NgModule({
-  declarations: [FirstViewComponent, ObjectifComponent, ProjetComponent, GettypedComponent, AddedittypesComponent],
+  declarations: [FirstViewComponent, ObjectifComponent, ProjetComponent, GettypedComponent, AddedittypesComponent, AddeditTypeTacheComponent, GetTypeTacheComponent, GetgroupeComponent, AddeditgroupeComponent, AddeditTypetacheSousserviceComponent, GetTypetacheSousserviceComponent],
   imports: [
     MatSnackBarModule,
     TableModule,
