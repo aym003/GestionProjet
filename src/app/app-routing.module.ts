@@ -28,7 +28,7 @@ const routes: Routes = [
 { path:'projet',component:ProjetComponent},
 {  path:'TypeD',component:GettypedComponent },
 {path:'typoss',component:PostaffComponent},
-{path:'typossconsultation',component:ConsultationcompoComponent}
+{path:'typossconsultation',component:ConsultationcompoComponent},
 
 {  path:'gettypetache',component:GetTypeTacheComponent },
 {  path:'groupe',component:GetgroupeComponent },
