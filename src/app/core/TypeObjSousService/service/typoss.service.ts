@@ -26,6 +26,11 @@ export class TypossService {
         
     return this.http.get(environment.GestionTypeossAPi + '/GetTypeossbjectif') ;
   }
+  getTypeossDTO(){
+        
+    return this.http.get(environment.GestionTypeossAPi + '/GetTypeObjectifDTO') ;
+  }
+  
   DeleteTypeoss(idTypeoss){
     return this.http
       .delete(environment.GestionTypeossAPi+ "/RemoveTyped?id=" + idTypeoss,

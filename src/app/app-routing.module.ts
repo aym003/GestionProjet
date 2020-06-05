@@ -6,6 +6,7 @@ import { GetobjComponent } from './demo/Setting/objectif/getobj/getobj.component
 import { ProjetComponent } from './demo/Setting/projet/projet/projet.component';
 import { GettypedComponent } from './demo/Setting/typed/gettyped/gettyped.component';
 import { PostaffComponent } from './demo/Affectation/postaff/postaff.component';
+import { ConsultationcompoComponent } from './demo/Affectation/consultationcompo/consultationcompo.component';
 
 const routes: Routes = [
   {path: 'demoInterface', component: FirstViewComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
 { path:'Tyopeobjectif',component:GetobjComponent},
 { path:'projet',component:ProjetComponent},
 {  path:'TypeD',component:GettypedComponent },
-{path:'typoss',component:PostaffComponent}
+{path:'typoss',component:PostaffComponent},
+{path:'typossconsultation',component:ConsultationcompoComponent}
 ];
 
 @NgModule({

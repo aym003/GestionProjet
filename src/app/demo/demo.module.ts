@@ -19,8 +19,9 @@ import { AddditobjComponent } from './Setting/objectif/addditobj/addditobj.compo
 import { PostaffComponent } from './Affectation/postaff/postaff.component'; 
 import {DropdownModule} from 'primeng/dropdown';
 import {PickListModule} from 'primeng/picklist';
+import { ConsultationcompoComponent } from './Affectation/consultationcompo/consultationcompo.component';
 @NgModule({
-  declarations: [FirstViewComponent, ProjetComponent, GettypedComponent, AddedittypesComponent, GetobjComponent, AddditobjComponent, PostaffComponent],
+  declarations: [FirstViewComponent, ProjetComponent, GettypedComponent, AddedittypesComponent, GetobjComponent, AddditobjComponent, PostaffComponent, ConsultationcompoComponent],
   imports: [
     PickListModule,
     DropdownModule,
